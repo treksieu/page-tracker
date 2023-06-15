@@ -27,7 +27,7 @@ def test_should_call_redis_incr(mock_redis, http_client):
 @unittest.mock.patch("page_tracker.app.redis")
 def test_should_handle_redis_connection_error(mock_redis, http_client):
     #Given
-    mock_redis.return_value.incr.side_effect = ConnectionError
+    mock_redis.return_value.incr.side_effect = ConnectionError()
 
     #When
     response = http_client.get("/")
