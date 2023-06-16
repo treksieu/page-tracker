@@ -23,5 +23,5 @@ dev = [
     "pytest",
     "pytest-timeout",
     "requests",
-    
+
 ]
