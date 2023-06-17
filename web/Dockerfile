@@ -1,10 +1,7 @@
-# Dockerfile
-
 FROM python:3.11.2-slim-bullseye AS builder
 
 RUN apt-get update && \
     apt-get upgrade --yes
-
 
 RUN useradd --create-home realpython
 USER realpython
@@ -32,7 +29,6 @@ RUN python -m pip install . -c constraints.txt && \
 
 FROM python:3.11.2-slim-bullseye
 
-
 RUN apt-get update && \
     apt-get upgrade --yes
 
@@ -50,4 +46,4 @@ RUN python -m pip install --upgrade pip setuptools && \
     python -m pip install --no-cache-dir page_tracker*.whl
 
 CMD ["flask", "--app", "page_tracker.app", "run", \
-     "--host", "0.0.0.0", "--port", "5000"]
+    "--host", "0.0.0.0", "--port", "5000"]
