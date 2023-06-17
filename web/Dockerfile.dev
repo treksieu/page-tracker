@@ -6,8 +6,6 @@ RUN apt-get update && \
     apt-get upgrade --yes
 RUN sysctl vm.overcommit_memory=1
 
-RUN sysctl vm.overcommit_memory=1
-
 RUN useradd --create-home realpython
 USER realpython
 WORKDIR /home/realpython
