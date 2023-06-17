@@ -5,7 +5,6 @@ FROM python:3.11.2-slim-bullseye AS builder
 RUN apt-get update && \
     apt-get upgrade --yes
 
-RUN sysctl vm.overcommit_memory=1
 
 RUN useradd --create-home realpython
 USER realpython
@@ -33,7 +32,6 @@ RUN python -m pip install . -c constraints.txt && \
 
 FROM python:3.11.2-slim-bullseye
 
-RUN sysctl vm.overcommit_memory=1
 
 RUN apt-get update && \
     apt-get upgrade --yes
