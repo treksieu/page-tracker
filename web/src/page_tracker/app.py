@@ -15,13 +15,13 @@ def index():
         page_views = redis().incr("page_views")
     except RedisError:
         app.logger.exception("Redis error")
-        return "Sorry, something went wrong \N{thinking face}", 500
+        return "Sorry, something went wrong \N{pensive face}", 500
     return f"This page has been seen {page_views} times."
 
 
 @cache
 def redis():
-    return Redis.from_url(os.getenv("REDIS_URL", "redis://192.168.1.111:6379"))
+    return Redis.from_url(os.getenv("REDIS_URL", "redis://redis-service:6379"))
 
 
 # if __name__ == "__main__":
