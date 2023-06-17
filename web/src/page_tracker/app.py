@@ -21,7 +21,7 @@ def index():
 
 @cache
 def redis():
-    return Redis.from_url(os.getenv("REDIS_URL", "redis://redis-service:6379"))
+    return Redis.from_url(os.getenv("REDIS_URL", "redis://localhost:6379"))
 
 
 # if __name__ == "__main__":
