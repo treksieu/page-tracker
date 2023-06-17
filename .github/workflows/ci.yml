@@ -28,12 +28,12 @@ jobs:
         uses: docker/login-action@v2
         if: ${{ github.even_name == 'push' }}
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          username: treksieu
+          password: dckr_pat_qHT-vMROc_cgwNK2H4uRY2Zb3cA
       - name: Push image to Docker Hub
         uses: docker/build-push-action@v4.0.0
         if: ${{ github.event_name == 'push'}}
         with:
           context: ./web
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/page-tracker:latest
+          tags: treksieu/page-tracker:latest
