@@ -16,7 +16,7 @@ def index():
         return "Sorry, something went wrong \N{pensive face}", 500
     else:
         return f"This page has been seen {page_views} times."
-
+#test
 
 @cache
 def redis():
