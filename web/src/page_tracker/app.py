@@ -21,5 +21,3 @@ def index():
 @cache
 def redis():
     return Redis.from_url(os.getenv("REDIS_URL", "redis://localhost:6379"))
-
-#test
